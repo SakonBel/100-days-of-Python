@@ -1,0 +1,16 @@
+#print function
+#New line character
+#Code intelligence and debugging
+#String concatenation
+#Nested input on print function
+#thorny.org(debugging)
+#Python comment
+#len function
+#Variable
+#Switching variable value(By using extra variable)
+#Variable naming rules
+#String subscription
+#Large number seperator
+#Str/Int/Float/Bool data types
+#type function
+#Type conversion(type casting)
