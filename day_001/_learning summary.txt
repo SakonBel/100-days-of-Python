@@ -3,7 +3,7 @@
 #Code intelligence and debugging
 #String concatenation
 #Nested input on print function
-#thorny.org(debugging)
+#thonny.org(debugging)
 #Python comment
 #len function
 #Variable
@@ -14,3 +14,9 @@
 #Str/Int/Float/Bool data types
 #type function
 #Type conversion(type casting)
+#Math operation and precedence(PEMDAS)
+#round function
+#Floor division operator
+#Operation assignment
+#f-string(only curly braces) and automatic string conversion
+#Text formatting
