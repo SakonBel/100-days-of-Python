@@ -1,0 +1,5 @@
+#Conditional statement
+#Block of code and indentation
+#Comparison operators
+#Modulo operator(give the remainder)
+#Nested if and elif statement
