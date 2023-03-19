@@ -3,3 +3,6 @@
 #Comparison operators
 #Modulo operator(give the remainder)
 #Nested if and elif statement
+#multiple if statement in successtion
+#elif without else
+#logical operators
