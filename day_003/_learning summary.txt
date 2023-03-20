@@ -1,0 +1,8 @@
+#askpython.com
+#randomization and random module
+#randint and random function
+#import your own module
+#list
+#how to alter, append, extend the list
+#the efficient way to learn method
+#random.choice

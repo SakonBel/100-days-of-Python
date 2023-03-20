@@ -6,3 +6,6 @@
 #multiple if statement in successtion
 #elif without else
 #logical operators
+#ascii art website
+#multiline string and three quote
+#escaping string
