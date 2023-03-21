@@ -2,3 +2,4 @@
 #range(start(opt), stop(req), step(opt)) function(value became the list of argument number)
 #sum(iterable(req), add(opt)) function
 #min and max(iterable) function
+#random.shuffle(list) function (mutate original)
