@@ -8,4 +8,4 @@ for height in student_height:
 
 average_height = round(total_height / total_students)
 
-print(f"Average height of all student is {average_height} cm.")
+print(f"Average height of all students is {average_height} cm.")

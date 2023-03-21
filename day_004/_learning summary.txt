@@ -1,3 +1,4 @@
 #for loop
 #range(start(opt), stop(req), step(opt)) function
 #sum(iterable(req), add(opt)) function
+#min and max(iterable) function
