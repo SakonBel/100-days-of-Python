@@ -6,3 +6,4 @@
 #how to alter, append, extend the list
 #the efficient way to learn method
 #random.choice
+#nested list
