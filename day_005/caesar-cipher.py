@@ -4,7 +4,7 @@ print("Welcome to the caesar cipher!")
 #Create initial letters
 letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-message = input("Enter your secret message.\n").lower()
+message = input("\nEnter your secret message.\n").lower()
 
 #Store each message character in list
 m_list = []
@@ -38,33 +38,51 @@ for char in message:
 for pos in new_num_list:
   new_m_list += letters[pos]
 
-print(num_m_list, new_num_list, m_list, new_m_list)
+# print(num_m_list, new_num_list, m_list, new_m_list)
 
 #Create cipher function
 def cipher(i_list):
   new_message = ""
   for char in i_list:
     new_message += char
-  print(f"Your message has been turn to : {new_message}")
+  print(f"\nYour message has been turn to : {new_message}\n")
 
 def decipher(i_list):
   revert_message = ""
   for char in i_list:
     revert_message += char
-  print(f"Your message has been turn to : {revert_message}")
+  print(f"\nYour message has been turn to : {revert_message}\n")
 
-cipher(new_m_list)
-decipher
 #Promp the user if they want to see the new message?
-see_new = ""
-see_old = ""
+see = ["a"]
 
-def prompt_user(prompt):
-  prompt = input("Do you want to see the message that been ciphered?\ny : to see\nn : to not see\n q : to exit\n ").lower()
+def prompt_user(word):
+  prompt = input(f"Do you want to see the message that been {word}?\ny : to see\nn : to not see\nq : to exit\n").lower()
+  if prompt == "q":
+    see[0] = "q"
+  elif (prompt == "y" and word == "cipher") or (prompt == "n" and word == "decipher"):
+    see[0] = "n"
+    print(see[0])
+  elif (prompt == "y" and word == "decipher") or (prompt == "n" and word == "cipher"):
+    see[0] = "o"
+    print(see[0])
 
-if see_new == "y":
-  prompt_user(see_old)
-elif see_old == "y":
-  prompt_user(see_new)
+def prompt_init():
+  input_a = input("Do you want to see old message or new message?\na : new\nb : old\n").lower()
+  if input_a == "a":
+    see[0] = "n"
+  else:
+    see[0] = "o"
 
+prompt_init()
+while see[0] == "n" or see[0] == "o":
+  if see[0] == "n":
+    cipher(new_m_list)  
+    prompt_user("decipher")
+  elif see[0] == "o":
+    decipher(m_list)
+    prompt_user("cipher")
+
+if see[0] == "q":
+  print("\nYou have been quit the program!\n")
 
