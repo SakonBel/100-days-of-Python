@@ -3,3 +3,5 @@
 #sum(iterable(req), add(opt)) function
 #min and max(iterable) function
 #random.shuffle(list) function (mutate original)
+#how to define function
+#while loop
