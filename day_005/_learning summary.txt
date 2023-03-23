@@ -8,3 +8,9 @@
 #looping dictionary can return key and you can use it to look for value later
 #Nested list and dictionary
 #We can name dict key with number
+#sleep function from time module
+#system from os module that we can use clear function
+#pythontutor.com
+#output with return keyword
+#title function
+#Docstrings for function details
