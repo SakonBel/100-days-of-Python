@@ -1,2 +1,9 @@
 #Function parameter and argument
 #Positional argument and keyword argument
+#list index Function
+#if and in in the list
+#dictionary and string as a keyword
+#empty dictionay and how to wipe dictionary
+#edit and reassign value to dictrionary using square bracket
+#looping dictionary can return key and you can use it to look for value later
+#Nested list and dictionary
