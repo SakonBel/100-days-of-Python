@@ -7,3 +7,4 @@
 #edit and reassign value to dictrionary using square bracket
 #looping dictionary can return key and you can use it to look for value later
 #Nested list and dictionary
+#We can name dict key with number
