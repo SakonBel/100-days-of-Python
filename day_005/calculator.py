@@ -15,7 +15,7 @@ result = ""
 def value_input():
     if not result:
         clear()
-        first = int(input("What's the first number? : "))
+        first = float(input("What's the first number? : "))
     else:
         first = result
     clear()
@@ -23,7 +23,7 @@ def value_input():
     print("+\n-\n*\n/")
     oper = input("Pick an operator above : ")
     clear()
-    second = int(input("What's the next number? : "))
+    second = float(input("What's the next number? : "))
     return first, oper, second
 
 
