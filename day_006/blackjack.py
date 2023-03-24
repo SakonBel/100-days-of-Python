@@ -27,11 +27,13 @@ def reset_card():
 
 
 # Define initial bet pool of player and dealer
-player_bet = 10000
-dealer_bet = 10000
+
+def show_player_chip():
+    print(f"You balance is : {player_bet}")
 
 
 def place_bet():
+    show_player_chip()
     placing = input("Please place your bet. (Maximum is $500) : $")
     clear()
     try:
@@ -80,13 +82,21 @@ def deal():
     player_hit()
 
 
+# Set show hand function and reveal hand for dealer
+reveal = False
+
+
 def show_hand(dealer):
     p_hand = ""
     if not dealer:
         for card in player_hand:
             p_hand += ("[" + card + "]")
     else:
-        p_hand += f"[{dealer_hand[0]}][??]"
+        if not reveal:
+            p_hand += f"[{dealer_hand[0]}][??]"
+        else:
+            for card in player_hand:
+                p_hand += ("[" + card + "]")
 
     return p_hand
 
@@ -131,23 +141,61 @@ def show_both_hand():
     print(f"The card on player hand is : {show_hand(False)}")
     print(f"The card on dealer hand is : {show_hand(True)}")
 
+# Define function to let player choose to hit or stand
+
+
+def hit_or_stand():
+    choice = input(
+        f"\nDo you want to hit another card(h) or stand(s)? : ").lower()
+    if choice == "h":
+        clear()
+        return True
+    elif choice == "s":
+        clear()
+        return False
+    else:
+        clear()
+        print("You input an invalid choice")
+        sleep(2)
+        hit_or_stand()
+
 
 # Determine if player value is blackjack or not
-# def is_blackjack():
+is_blackjack = False
+player_is_bust = False
+
 # Initialize the game
+player_bet = input("Please input your initial bet chip that you have. : ")
 reset_card()
 
 clear()
-# bet = place_bet()
+bet = place_bet()
 
 deal()
 
-# show_bet_pool(bet)
-show_both_hand()
-print(count_score(player_hand))
-print(count_score(dealer_hand))
+player_score = count_score(player_hand)
+dealer_score = count_score(dealer_hand)
+player_going = True
 
 
 # Make the player and dealer can be able to continue hitting another card
-still_goint = True
-# while still_going and not blackjack:
+while player_going and not is_blackjack and not player_is_bust:
+    show_player_chip()
+    show_bet_pool(bet)
+    show_both_hand()
+    player_score = count_score(player_hand)
+    print(f"Your current score is {player_score}.\n")
+    if player_score == 21 and len(player_hand) == 2:
+        print("BlackJack!!")
+        is_blackjack = True
+    elif player_score > 21:
+        player_is_bust = True
+    else:
+        player_going = hit_or_stand()
+        player_hit()
+
+
+if player_is_bust:
+    clear()
+    show_both_hand
+    print("\nBust!!\nYou lose.")

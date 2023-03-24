@@ -1,0 +1,4 @@
+#Global and local scope
+#namespaces
+#global keyword and the way to modified global variable
+#Constants
