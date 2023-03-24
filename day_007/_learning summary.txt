@@ -1,0 +1,3 @@
+#Try/except for error handling
+#number format for comma separation
+#spread list

@@ -1,6 +1,7 @@
 from os import system
 from time import sleep
 import random
+import ascii_blackjack
 
 
 def clear(): return system("clear")
@@ -14,7 +15,7 @@ ______ _            _      ___            _
 | |_/ / | __ _  ___| | __   | | __ _  ___| | __
 | ___ \ |/ _` |/ __| |/ /   | |/ _` |/ __| |/ /
 | |_/ / | (_| | (__|   </\__/ / (_| | (__|   < 
-\____/|_|\__,_|\___|_|\_\____/ \__,_|\___|_|\_\
+\____/|_|\__,_|\___|_|\_\____/ \__,_|\___|_|\_\\
                                                
                                                
 """)
@@ -33,8 +34,8 @@ while playing:
 
         # Define card and initial deck function
         card_symbols = ["♠", "♥", "♦", "♣"]
-        card_numbers = ["2", "3", "4", "5", "6",
-                        "7", "8", "9", "10", "J", "Q", "K", "A"]
+        card_numbers = [" 2", " 3", " 4", " 5", " 6",
+                        " 7", " 8", " 9", "10", " J", " Q", " K", " A"]
 
         card_deck = []
 
@@ -46,7 +47,7 @@ while playing:
         # Define initial bet pool of player and dealer
 
         def show_player_chip():
-            print(f"You balance is : {player_bet}")
+            print(f"You balance is : ${'{:,}'.format(player_bet)}")
 
         def deduct_chip(init, chip):
             return init - chip
@@ -101,14 +102,45 @@ while playing:
         def show_hand(dealer):
             p_hand = ""
             if not dealer:
-                for card in player_hand:
-                    p_hand += ("[" + card + "]")
+                if len(player_hand) == 2:
+                    p_hand += ascii_blackjack.card_2(*player_hand)
+                elif len(player_hand) == 3:
+                    p_hand += ascii_blackjack.card_3(*player_hand)
+                elif len(player_hand) == 4:
+                    p_hand += ascii_blackjack.card_4(*player_hand)
+                elif len(player_hand) == 5:
+                    p_hand += ascii_blackjack.card_5(*player_hand)
+                elif len(player_hand) == 6:
+                    p_hand += ascii_blackjack.card_6(*player_hand)
+                elif len(player_hand) == 7:
+                    p_hand += ascii_blackjack.card_7(*player_hand)
+                elif len(player_hand) == 8:
+                    p_hand += ascii_blackjack.card_8(*player_hand)
+                elif len(player_hand) == 9:
+                    p_hand += ascii_blackjack.card_9(*player_hand)
+                # for card in player_hand:
+                #     p_hand += ("[" + card + "]")
             else:
                 if not reveal:
-                    p_hand += f"[{dealer_hand[0]}][??]"
+                    p_hand += ascii_blackjack.card_2(dealer_hand[0], "???")
                 else:
-                    for card in dealer_hand:
-                        p_hand += ("[" + card + "]")
+                    if len(dealer_hand) == 2:
+                        p_hand += ascii_blackjack.card_2(*dealer_hand)
+                    elif len(dealer_hand) == 3:
+                        p_hand += ascii_blackjack.card_3(*dealer_hand)
+                    elif len(dealer_hand) == 4:
+                        p_hand += ascii_blackjack.card_4(*dealer_hand)
+                    elif len(dealer_hand) == 5:
+                        p_hand += ascii_blackjack.card_5(*dealer_hand)
+                    elif len(dealer_hand) == 6:
+                        p_hand += ascii_blackjack.card_6(*dealer_hand)
+                    elif len(dealer_hand) == 7:
+                        p_hand += ascii_blackjack.card_7(*dealer_hand)
+                    elif len(dealer_hand) == 8:
+                        p_hand += ascii_blackjack.card_8(*dealer_hand)
+                    elif len(dealer_hand) == 9:
+                        p_hand += ascii_blackjack.card_9(*dealer_hand)
+                    # p_hand += ("[" + card + "]")
 
             return p_hand
 
@@ -118,12 +150,12 @@ while playing:
             accumulate_score = 0
             has_a = False
             for card in hand:
-                score = card[0]
-                t_score = card[1]
+                score = card[1]
+                t_score = card[0]
                 int_score = 0
                 try:
-                    if t_score == "0":
-                        int_score = int(score + t_score)
+                    if score == "0":
+                        int_score = int(t_score + score)
                         accumulate_score += int_score
                     else:
                         int_score = int(score)
@@ -183,7 +215,7 @@ while playing:
         # Make the player and dealer can be able to continue hitting another card
         while player_going and not player_is_bust:
             show_player_chip()
-            print(f"The bet pool now is ${bet_pool(bet)}")
+            print(f"The bet pool now is ${'{:,}'.format(bet_pool(bet))}")
             print("---------")
             show_both_hand()
             player_score = count_score(player_hand)
@@ -192,7 +224,7 @@ while playing:
                 clear()
                 print(show_hand(False))
                 print("\nLucky!! You got BlackJack.")
-                sleep(3)
+                sleep(4)
                 player_going = False
             elif player_score == 21:
                 player_going = False
@@ -206,11 +238,13 @@ while playing:
         if not player_going:
             clear()
             reveal = True
+            print(f"The bet pool now is ${'{:,}'.format(bet_pool(bet))}")
+            print("---------")
             show_both_hand()
             dealer_score = count_score(dealer_hand)
             print(f"\nYour current score is {player_score}.")
             print(f"Dealer current score is {dealer_score}.")
-            sleep(3)
+            sleep(4)
             while dealer_score < 17:
                 clear()
                 print("Dealer hit a card!")
@@ -221,30 +255,33 @@ while playing:
                 if dealer_score > 21:
                     print(show_hand(True))
                     print("\nDealer's Bust!!")
-                    sleep(3)
+                    sleep(4)
                 else:
+                    print(
+                        f"The bet pool now is ${'{:,}'.format(bet_pool(bet))}")
+                    print("---------")
                     show_both_hand()
                     print(f"\nYour current score is {player_score}.")
                     print(f"Dealer current score is {dealer_score}.")
-                    sleep(3)
+                    sleep(4)
 
         if player_is_bust:
             clear()
             print(show_hand(False))
             print("\nBust!!\nYou lose.")
-            sleep(3)
+            sleep(4)
         elif dealer_score > 21:
             clear()
             print("You win!!\n")
-            print(f"You received ${bet_pool(bet)} of chips.")
+            print(f"You received ${'{:,}'.format(bet_pool(bet))} of chips.")
             player_bet += bet_pool(bet)
-            sleep(3)
+            sleep(4)
         elif (player_score > dealer_score) and not player_is_bust:
             clear()
             print("You win!!\n")
-            print(f"You received ${bet_pool(bet)} of chips.")
+            print(f"You received ${'{:,}'.format(bet_pool(bet))} of chips.")
             player_bet += bet_pool(bet)
-            sleep(3)
+            sleep(4)
         elif dealer_score > player_score:
             clear()
             print("You lose!!\n")
@@ -254,9 +291,19 @@ while playing:
             print("Draw!!\n")
             print(f"You received ${int(bet_pool(bet)/2)} of returned chips.")
             player_bet += int(bet_pool(bet)/2)
-            sleep(3)
+            sleep(4)
+
+    if player_bet < 0:
+        clear()
+        print("You have debt with this casino.\nOur staff will hunt you down if you don't pay!!")
+        sleep(5)
+    elif player_bet == 0:
+        clear()
+        print("It's okay.\nYou only lose everything in your life!!")
+        sleep(4)
 
     clear()
+    print("GAME OVER\nYou lose all money!!\n")
     answer = input("Do you want to reset the game? ( Y or N) : ").lower()
     if answer == "n":
         clear()
