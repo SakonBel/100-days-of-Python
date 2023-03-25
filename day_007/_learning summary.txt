@@ -9,3 +9,4 @@
   -look for clue(on console and editor)
   -use debugger
   -ask StackOverflow
+#Get keys and value on objects with for and enumerate function
