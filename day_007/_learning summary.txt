@@ -1,3 +1,11 @@
 #Try/except for error handling
 #number format for comma separation
 #spread list
+#function with ASCII art
+#Debugging and techniques like:
+  -run code ofter
+  -try to be computer
+  -reproduce bug
+  -look for clue(on console and editor)
+  -use debugger
+  -ask StackOverflow
