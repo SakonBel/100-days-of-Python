@@ -1,0 +1,7 @@
+#OOP (Opject Orient Programming) and model real life objects
+#Procedural Programming
+#Classes (multiple objects generated with the same type) (blueprint)
+#Class Pascal case
+#Objects
+#attributes and methods
+#Python packages and use PyPi
