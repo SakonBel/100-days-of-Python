@@ -1,0 +1,7 @@
+#turtle module
+#how to read the documentation and look for answer
+#way to import module
+  -basic import
+  -from .. import ..(from .. import *)
+  -aliasing modules(import .. as ..)
+  -installing modules

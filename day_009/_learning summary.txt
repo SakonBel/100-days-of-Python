@@ -1,0 +1,5 @@
+#pass keyword for avoid indentation error
+#Constructor for initializing the objects
+#init function and the way it will be called everytime when we use Class
+#default value for init function
+#method and self keyword as first parameter
