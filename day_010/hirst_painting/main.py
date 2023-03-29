@@ -19,6 +19,7 @@ screen.colormode(255)
 timmy = Turtle()
 
 timmy.penup()
+timmy.hideturtle()
 timmy.setheading(225)
 timmy.forward(300)
 timmy.setheading(0)
