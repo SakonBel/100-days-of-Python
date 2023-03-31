@@ -2,3 +2,4 @@
 #super keyword
 #super class and subclass 
 #modified the super class method
+#slicing and increment on third value and can use minus to backward
