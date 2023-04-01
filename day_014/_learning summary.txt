@@ -1,0 +1,7 @@
+#open function
+#close method
+#read method
+#write method and mode(r, w, a)
+#write method and creating new file
+#with and as keyword for working with file
+#relative and absolute path

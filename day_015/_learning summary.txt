@@ -1,0 +1,3 @@
+#Split and slice method
+#Replace and strip method
+#Readlines and readline
