@@ -3,9 +3,4 @@
 #Readlines and readline
 #csv module
 #csv reader method
-#pandas module
-#pandas read csv method
-#pandas series and dataframe
-#get hold data on column, row and cell
-#convert data to dataframe and csv file
 #statistics module
