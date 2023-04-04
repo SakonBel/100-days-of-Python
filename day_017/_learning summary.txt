@@ -1,0 +1,3 @@
+#list comprehension
+#conditional list comprehension
+#python sequences with list, tuple, string and range

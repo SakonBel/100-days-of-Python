@@ -1,7 +1,11 @@
-from turtle import Turtle, Screen
+import turtle
 
-screen = Screen()
+screen = turtle.Screen()
 screen.title("U.S. States Game")
 
+image = "blank_states_img.gif"
+screen.addshape(image)
+
+turtle.shape(image)
 
 screen.exitonclick()
