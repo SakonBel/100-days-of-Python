@@ -1,5 +1,0 @@
-#list comprehension
-#conditional list comprehension
-#python sequences with list, tuple, string and range
-#you can get rid of newline character by converting it to int
-#dictionary comprehension
