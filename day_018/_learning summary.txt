@@ -1,2 +1,5 @@
 #Python with GUI
 #Tkinter
+#set title/label and size of window
+#default arguments
+#*args and **kwargs
